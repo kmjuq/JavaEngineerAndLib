@@ -1,0 +1,23 @@
+syntax = "proto3";
+option optimize_for = SPEED; // 加快解析
+option java_package = "both.io.netty.proto";   //指定生成到哪个包下
+option java_outer_classname = "PersonDataInfo"; // 外部类名, 文件名
+
+// protobuf 可以使用message 管理其他的message
+message Person {
+
+  // 定义一个枚举类型
+  enum DataType {
+    StudentType = 0; //在proto3 要求enum的编号从0开始
+    WorkerType = 1;
+  }
+
+  // 用data_type 来标识传的是哪一个枚举类型
+  DataType data_type = 1;
+  string name = 2;
+  Address address = 3;
+}
+
+message Address {
+  string name = 1;
+}

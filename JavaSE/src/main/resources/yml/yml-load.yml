@@ -1,0 +1,42 @@
+cnblogs:
+  domian: https://www.cnblogs.com/
+  article:
+    - name: Java Study
+      date: 2002-12-14
+      updateCount: 12
+      isEnd: true
+      author: &author1 [kmj,jmk]
+      royalties: 124.4
+      desc: >
+        i am studying yml spec
+        and watching tv
+    - name: Go Study
+      date: 2001-12-15T02:59:43.1Z
+      # 暂时不支持 八进制 ，目前解析为 字符串
+      updateCount: 0o14
+      isEnd: false
+      author:
+        - kmj
+        - jmk
+      royalties: 12.3015e+02
+      desc: |
+        i am studying yml spec
+        and watching tv
+    - name: !!str 12
+      date: 2001-11-23 15:02:31 -5
+      updateCount: 0xC
+      isEnd: false
+      author: *author1
+      royalties: 1.23015e+3
+      desc: |+
+        i am studying yml spec
+        and watching tv
+  license: {
+    icp: 京ICP备10036305号-7,
+    num: 合字B2-20090007,
+    nismsp: 11010802022657
+  }
+  matrix:
+    - [1,2,3]
+    - [4,5,6]
+    - [7,8,9]

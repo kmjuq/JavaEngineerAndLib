@@ -1,0 +1,27 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:ws="http://ws.demo.hap.hand.com/">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <ws:sayHello>
+            <name>${name}</name>
+            <author>${author}</author>
+        </ws:sayHello>
+    </soapenv:Body>
+</soapenv:Envelope>
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:ws="http://ws.demo.hap.hand.com/">
+<soapenv:Header/>
+<soapenv:Body>
+    <ws:sayHello>
+        <list>
+            <#list books as book>
+            <book>
+                <name>${name}</name>
+                <author>${author}</author>
+            </book>
+        </#list>
+    </list>
+</ws:sayHello>
+</soapenv:Body>
+        </soapenv:Envelope>

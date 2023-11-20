@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>JavaEngineerAndLib</artifactId>
+        <groupId>org.kmj</groupId>
+        <version>0.0.1</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <properties>
+        <spock.version>2.3-groovy-4.0</spock.version>
+        <spock.objenesis.version>3.3</spock.objenesis.version>
+        <groovy.version>4.0.15</groovy.version>
+        <hamcrest-core.version>2.2</hamcrest-core.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+
+            <!--            spock测试框架-->
+            <dependency>
+                <groupId>org.spockframework</groupId>
+                <artifactId>spock-bom</artifactId>
+                <version>${spock.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency> <!-- use a specific Groovy version rather than the one specified by spock-core -->
+                <groupId>org.apache.groovy</groupId>
+                <artifactId>groovy</artifactId>
+                <version>${groovy.version}</version>
+            </dependency>
+            <dependency>
+                <!-- enables mocking of classes without default constructor (together with ByteBuddy or CGLIB) -->
+                <groupId>org.objenesis</groupId>
+                <artifactId>objenesis</artifactId>
+                <version>${spock.objenesis.version}</version>
+                <scope>test</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+    <dependencies>
+        <!-- Mandatory dependencies for using Spock -->
+        <dependency>
+            <groupId>org.spockframework</groupId>
+            <artifactId>spock-core</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency> <!-- enables mocking of classes (in addition to interfaces) -->
+            <groupId>net.bytebuddy</groupId>
+            <artifactId>byte-buddy</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency> <!-- enables mocking of classes without default constructor (together with ByteBuddy or CGLIB) -->
+            <groupId>org.objenesis</groupId>
+            <artifactId>objenesis</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency> <!-- only required if Hamcrest matchers are used -->
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-core</artifactId>
+            <version>${hamcrest-core.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency> <!-- use a specific Groovy version rather than the one specified by spock-core -->
+            <groupId>org.apache.groovy</groupId>
+            <artifactId>groovy</artifactId>
+        </dependency>
+    </dependencies>
+
+    <artifactId>SoftwareEngineering</artifactId>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>21</source>
+                    <target>21</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.gmavenplus</groupId>
+                <artifactId>gmavenplus-plugin</artifactId>
+                <version>3.0.0</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>compile</goal>
+                            <goal>compileTests</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.1.2</version>
+                <configuration>
+                    <useModulePath>false</useModulePath>
+                    <useFile>false</useFile>
+                    <includes>
+                        <include>**/*Test</include>
+                        <include>**/*Spec</include>
+                    </includes>
+                    <statelessTestsetReporter
+                            implementation="org.apache.maven.plugin.surefire.extensions.junit5.JUnit5Xml30StatelessReporter">
+                        <disable>false</disable>
+                        <version>3.0</version>
+                        <usePhrasedFileName>false</usePhrasedFileName>
+                        <usePhrasedTestSuiteClassName>true</usePhrasedTestSuiteClassName>
+                        <usePhrasedTestCaseClassName>true</usePhrasedTestCaseClassName>
+                        <usePhrasedTestCaseMethodName>true</usePhrasedTestCaseMethodName>
+                    </statelessTestsetReporter>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
