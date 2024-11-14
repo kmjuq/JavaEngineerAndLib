@@ -38,7 +38,7 @@ public class YmlLoadU {
     }
 
     @Test
-    public void questionMark(){
+    public void questionMark() {
         log.info(getDocument(4).toString());
     }
 

@@ -19,11 +19,11 @@ public class PhaserTest {
                 return super.onAdvance(phase, registeredParties);
             }
         };
-        for (int i = 0; i <10 ; i++) {
-            new Thread(ThrowingRunnable.unchecked(()->{
-                if(resources[0] < 0 ) return;
+        for (int i = 0; i < 10; i++) {
+            new Thread(ThrowingRunnable.unchecked(() -> {
+                if (resources[0] < 0) return;
                 resources[0]--;
-                log.info("{}",resources[0]);
+                log.info("{}", resources[0]);
                 phaser.arriveAndAwaitAdvance();
             })).start();
         }

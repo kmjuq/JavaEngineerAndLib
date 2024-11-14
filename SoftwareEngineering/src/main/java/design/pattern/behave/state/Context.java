@@ -1,6 +1,5 @@
 package design.pattern.behave.state;
 
-import design.pattern.behave.state.base.State;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.Accessors;
@@ -14,7 +13,7 @@ public class Context {
 
     private boolean flag = false;
 
-    public void handle(){
+    public void handle() {
         state.handle();
     }
 

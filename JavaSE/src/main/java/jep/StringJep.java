@@ -16,15 +16,15 @@ public class StringJep {
     }
 
     @Test
-    public void demo2(){
+    public void demo2() {
         log.info(
                 """
-                <html>
-                    <body>
-                        <p>Hello, world</p>
-                    </body>
-                </html>
-                """
+                        <html>
+                            <body>
+                                <p>Hello, world</p>
+                            </body>
+                        </html>
+                        """
         );
     }
 

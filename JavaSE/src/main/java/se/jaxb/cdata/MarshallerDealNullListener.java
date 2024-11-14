@@ -1,7 +1,6 @@
 package se.jaxb.cdata;
 
 
-
 import jakarta.xml.bind.Marshaller;
 
 import java.lang.reflect.Field;

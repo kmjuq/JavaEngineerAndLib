@@ -17,14 +17,14 @@ public class AllData {
 
     private String twoPhase;
 
-    public List<IData> divide(){
+    public List<IData> divide() {
         ArrayList<IData> allData = new ArrayList<>();
         allData.add(new OnePhase().setContent(onePhase));
         allData.add(new TwoPhase().setContent(twoPhase));
         return allData;
     }
 
-    public void accept(IVisitor... visitors){
+    public void accept(IVisitor... visitors) {
         divide().forEach(data -> Arrays.stream(visitors).forEach(data::accept));
     }
 

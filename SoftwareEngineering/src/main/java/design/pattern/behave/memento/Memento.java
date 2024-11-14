@@ -9,11 +9,13 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 public class Memento {
 
-    @NonNull private String x;
+    @NonNull
+    private String x;
 
-    @NonNull private String y;
+    @NonNull
+    private String y;
 
     public Memento copy() {
-        return new Memento(this.x,this.y);
+        return new Memento(this.x, this.y);
     }
 }

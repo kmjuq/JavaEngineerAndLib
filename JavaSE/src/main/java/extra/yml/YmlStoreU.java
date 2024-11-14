@@ -13,10 +13,10 @@ public class YmlStoreU {
     public static void main(String[] args) {
         final List<LinkedHashMap<String, String>> objs = new ArrayList<>();
         final LinkedHashMap<String, String> obj1 = new LinkedHashMap<>() {{
-            put("kmj1","name");
+            put("kmj1", "name");
         }};
         final LinkedHashMap<String, String> obj2 = new LinkedHashMap<>() {{
-            put("kmj2","name");
+            put("kmj2", "name");
         }};
         objs.add(obj1);
         objs.add(obj2);

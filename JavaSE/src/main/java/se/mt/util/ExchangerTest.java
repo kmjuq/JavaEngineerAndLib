@@ -18,20 +18,19 @@ import java.util.concurrent.TimeUnit;
 public class ExchangerTest {
 
     @Test
-    public void demo(){
+    public void demo() {
         Exchanger<String> stringExchanger = new Exchanger<>();
         ScheduledExecutorService ses = Executors.newScheduledThreadPool(2);
-        ses.scheduleAtFixedRate(ThrowingRunnable.unchecked(()->{
+        ses.scheduleAtFixedRate(ThrowingRunnable.unchecked(() -> {
             String str = RandomUtil.randomString(10);
-            log.info("{}",stringExchanger.exchange(str));
-        }),1,1,TimeUnit.SECONDS);
-        ses.scheduleAtFixedRate(ThrowingRunnable.unchecked(()->{
+            log.info("{}", stringExchanger.exchange(str));
+        }), 1, 1, TimeUnit.SECONDS);
+        ses.scheduleAtFixedRate(ThrowingRunnable.unchecked(() -> {
             String str = RandomUtil.randomString(10);
-            log.info("{}",stringExchanger.exchange(str));
-        }),1,1,TimeUnit.SECONDS);
-        ThreadUtil.sleep(10,TimeUnit.SECONDS);
+            log.info("{}", stringExchanger.exchange(str));
+        }), 1, 1, TimeUnit.SECONDS);
+        ThreadUtil.sleep(10, TimeUnit.SECONDS);
     }
-
 
 
 }

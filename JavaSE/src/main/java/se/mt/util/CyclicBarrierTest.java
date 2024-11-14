@@ -20,17 +20,17 @@ public class CyclicBarrierTest {
     public void demo1() throws InterruptedException {
         for (int i = 0; i < 3; i++) {
             CyclicBarrier cyclicBarrier = new CyclicBarrier(3);
-            ThreadUtil.execAsync(ThrowingRunnable.unchecked(()->{
+            ThreadUtil.execAsync(ThrowingRunnable.unchecked(() -> {
                 TimeUnit.SECONDS.sleep(1);
                 log.info("加载地图资源");
                 cyclicBarrier.await();
             }));
-            ThreadUtil.execAsync(ThrowingRunnable.unchecked(()->{
+            ThreadUtil.execAsync(ThrowingRunnable.unchecked(() -> {
                 TimeUnit.SECONDS.sleep(2);
                 log.info("加载人物资源");
                 cyclicBarrier.await();
             }));
-            ThreadUtil.execAsync(ThrowingRunnable.unchecked(()->{
+            ThreadUtil.execAsync(ThrowingRunnable.unchecked(() -> {
                 TimeUnit.SECONDS.sleep(3);
                 log.info("加载场景资源");
                 cyclicBarrier.await();
@@ -43,20 +43,20 @@ public class CyclicBarrierTest {
     @Test
     public void demo2() throws InterruptedException {
         for (int i = 0; i < 3; i++) {
-            CyclicBarrier cyclicBarrier = new CyclicBarrier(3,()->{
+            CyclicBarrier cyclicBarrier = new CyclicBarrier(3, () -> {
                 log.info("资源加载完成");
             });
-            ThreadUtil.execAsync(ThrowingRunnable.unchecked(()->{
+            ThreadUtil.execAsync(ThrowingRunnable.unchecked(() -> {
                 cyclicBarrier.await();
                 TimeUnit.SECONDS.sleep(1);
                 log.info("加载地图资源");
             }));
-            ThreadUtil.execAsync(ThrowingRunnable.unchecked(()->{
+            ThreadUtil.execAsync(ThrowingRunnable.unchecked(() -> {
                 cyclicBarrier.await();
                 TimeUnit.SECONDS.sleep(2);
                 log.info("加载人物资源");
             }));
-            ThreadUtil.execAsync(ThrowingRunnable.unchecked(()->{
+            ThreadUtil.execAsync(ThrowingRunnable.unchecked(() -> {
                 cyclicBarrier.await();
                 TimeUnit.SECONDS.sleep(3);
                 log.info("加载场景资源");

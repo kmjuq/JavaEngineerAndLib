@@ -1,6 +1,5 @@
 package design.pattern.behave.visitor;
 
-import design.pattern.behave.visitor.IData;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.Accessors;

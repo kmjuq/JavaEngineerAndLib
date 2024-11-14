@@ -14,7 +14,7 @@ public class MyVerticle extends AbstractVerticle {
         });
 
         // listen 默认绑定本地 80
-        server.listen( res -> {
+        server.listen(res -> {
             if (res.succeeded()) {
                 startPromise.complete();
             } else {

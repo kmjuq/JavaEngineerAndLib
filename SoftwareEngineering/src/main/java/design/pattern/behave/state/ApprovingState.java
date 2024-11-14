@@ -1,6 +1,5 @@
 package design.pattern.behave.state;
 
-import design.pattern.behave.state.IState;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
@@ -20,7 +19,7 @@ public class ApprovingState extends AbstractState {
         Context context = this.getContext();
         if (context.isFlag()) {
             context.setState(new ApprovedState(context));
-        }else{
+        } else {
             context.setState(new RejectedState(context));
         }
     }

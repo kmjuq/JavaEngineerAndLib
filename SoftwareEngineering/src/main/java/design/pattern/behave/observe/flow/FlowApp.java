@@ -10,8 +10,9 @@ public class FlowApp {
 
     private static SubmissionPublisher<String> publisher = new SubmissionPublisher<>();
 
-    private static Flow.Subscriber<Integer> subscriber = new FlowSubscriber<>(){
+    private static Flow.Subscriber<Integer> subscriber = new FlowSubscriber<>() {
         private Flow.Subscription subscription;
+
         @Override
         public void onSubscribe(Flow.Subscription subscription) {
             this.subscription = subscription;
@@ -20,13 +21,14 @@ public class FlowApp {
 
         @Override
         public void onNext(Integer item) {
-            log.info("subscriber onnext {}",item);
+            log.info("subscriber onnext {}", item);
             subscription.request(3);
         }
     };
 
-    private static Flow.Processor<String,Integer> processor = new FlowProcessor<>() {
+    private static Flow.Processor<String, Integer> processor = new FlowProcessor<>() {
         private Flow.Subscription subscription;
+
         @Override
         public void onSubscribe(Flow.Subscription subscription) {
             this.subscription = subscription;
@@ -35,7 +37,7 @@ public class FlowApp {
 
         @Override
         public void onNext(String item) {
-            log.info("processor onnext {}",item);
+            log.info("processor onnext {}", item);
             submit(Integer.valueOf(item));
             subscription.request(1);
         }

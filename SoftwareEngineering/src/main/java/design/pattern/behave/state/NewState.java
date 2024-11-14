@@ -3,7 +3,7 @@ package design.pattern.behave.state;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-public class NewState extends AbstractState{
+public class NewState extends AbstractState {
 
     public NewState(Context context) {
         super(context);

@@ -14,11 +14,11 @@ public class TV {
     /**
      * 当前频道
      */
-    private int currentIndex=0;
+    private int currentIndex = 0;
 
     /**
      * 音量
      */
-    private int volume=10;
+    private int volume = 10;
 
 }

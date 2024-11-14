@@ -172,7 +172,7 @@ class SpockSpecification extends Specification {
     }
 
     /**
-     * {@link spock.mock.MockingApi#Mock())} 模拟方法返回的内容。
+     * {@link spock.mock.MockingApi#Mock() )} 模拟方法返回的内容。
      * {@link spock.mock.MockingApi#Mock()} Mock是Stub的超集，能用Stub的地方就能使用Mock，Mock 可以判断方法执行次数。
      * {@link spock.mock.MockingApi#Spy()} 既可以执行真实对象，也可以模拟，特殊场景才使用。
      */

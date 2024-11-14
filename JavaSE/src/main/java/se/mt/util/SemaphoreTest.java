@@ -21,13 +21,15 @@ public class SemaphoreTest {
 
         for (int i = 0; i < 10; i++) {
             new Thread(ThrowingRunnable.unchecked(() -> {
-                if(resources[0]<0){ return; }
+                if (resources[0] < 0) {
+                    return;
+                }
                 semaphore.acquire();
                 int num = resources[0];
-                ThreadUtil.sleep(500,TimeUnit.MILLISECONDS);
+                ThreadUtil.sleep(500, TimeUnit.MILLISECONDS);
                 resources[0] = num - 1;
-                log.info("当前资源数目为{}",resources[0]);
-                ThreadUtil.sleep(1,TimeUnit.SECONDS);
+                log.info("当前资源数目为{}", resources[0]);
+                ThreadUtil.sleep(1, TimeUnit.SECONDS);
                 semaphore.release();
             })).start();
         }

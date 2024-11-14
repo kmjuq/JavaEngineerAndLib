@@ -8,7 +8,7 @@ import lombok.experimental.Accessors;
 @Setter
 @Getter
 @ToString
-@Accessors(fluent = true,chain = true)
+@Accessors(fluent = true, chain = true)
 public class BinaryOperatorEvent {
 
     private int first;

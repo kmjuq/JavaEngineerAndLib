@@ -13,18 +13,18 @@ import java.nio.file.Path;
 import java.util.List;
 
 @Slf4j
-public class FileTypeRecognizer{
+public class FileTypeRecognizer {
 
     @Test
-    public void demo1(){
+    public void demo1() {
         List<File> loopFiles = FileUtil.loopFiles("/Users/kmj/Downloads");
-        loopFiles.forEach(ThrowingConsumer.unchecked(file ->{
-            log.info("{},{}",file.getAbsoluteFile(), Files.probeContentType(Path.of(file.getAbsolutePath())));
+        loopFiles.forEach(ThrowingConsumer.unchecked(file -> {
+            log.info("{},{}", file.getAbsoluteFile(), Files.probeContentType(Path.of(file.getAbsolutePath())));
         }));
     }
 
     @Test
-    public void demo2(){
+    public void demo2() {
         Tika tika = new Tika();
 
         List<File> loopFiles = FileUtil.loopFiles("/Users/kmj/Downloads");
@@ -41,22 +41,22 @@ public class FileTypeRecognizer{
     }
 
     @Test
-    public void demo3(){
+    public void demo3() {
         List<File> loopFiles = FileUtil.loopFiles("/Users/kmj/Downloads");
         loopFiles.forEach(
                 ThrowingConsumer.unchecked(
                         file -> {
                             String contentType = file.toURI().toURL().openConnection().getContentType();
-                            String mimeType= URLConnection.guessContentTypeFromName(file.getName());
-                            log.info("{}",file.getAbsoluteFile());
-                            log.info("{}\t{}",contentType,mimeType);
+                            String mimeType = URLConnection.guessContentTypeFromName(file.getName());
+                            log.info("{}", file.getAbsoluteFile());
+                            log.info("{}\t{}", contentType, mimeType);
                         }
                 )
         );
     }
 
     @Test
-    public void demo4(){
+    public void demo4() {
 
     }
 

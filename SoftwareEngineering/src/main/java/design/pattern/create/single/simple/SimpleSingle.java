@@ -8,15 +8,16 @@ public class SimpleSingle {
 
     private static final SimpleSingle simpleSingle = new SimpleSingle();
 
-    private SimpleSingle(){}
+    private SimpleSingle() {
+    }
 
-    public static SimpleSingle getInstance(){
+    public static SimpleSingle getInstance() {
         return simpleSingle;
     }
 
-    public void exec(){
+    public void exec() {
         ThreadUtil.sleep(2000);
-        log.info("{} 已 sleep 2000",Thread.currentThread().getName());
+        log.info("{} 已 sleep 2000", Thread.currentThread().getName());
     }
 
     public static void main(String[] args) {

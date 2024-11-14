@@ -30,6 +30,6 @@ package design.pattern.behave.strategy.base;
 @FunctionalInterface
 public interface DragonSlayingStrategy {
 
-  void execute();
+    void execute();
 
 }

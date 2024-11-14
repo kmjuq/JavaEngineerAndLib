@@ -13,10 +13,10 @@ import java.util.stream.IntStream;
 @Slf4j
 public class VirtualThreadJep {
 
-    private AtomicInteger count  = new AtomicInteger(0);
+    private AtomicInteger count = new AtomicInteger(0);
 
     @Test
-    public void demo1(){
+    public void demo1() {
         StopWatch stopWatch = new StopWatch();
         stopWatch.start();
         try (ExecutorService executor = Executors.newVirtualThreadPerTaskExecutor()) {
@@ -29,8 +29,8 @@ public class VirtualThreadJep {
             });
         }
         stopWatch.stop();
-        log.info("时间花费 毫秒{}",stopWatch.getLastTaskInfo().getTimeMillis());
-        log.info("总计数为{}",count.get());
+        log.info("时间花费 毫秒{}", stopWatch.getLastTaskInfo().getTimeMillis());
+        log.info("总计数为{}", count.get());
     }
 
 }

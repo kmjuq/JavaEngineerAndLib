@@ -39,7 +39,8 @@ public class SwitchJep {
         LEEK(20), GREENS(15), CRESS(5);
 
         final int weight;
-        Goods(int weight){
+
+        Goods(int weight) {
             this.weight = weight;
         }
     }

@@ -7,11 +7,11 @@ import lombok.experimental.Accessors;
 @Setter
 @Getter
 @Accessors(chain = true)
-public class AbstractState implements IState{
+public class AbstractState implements IState {
 
     private Context context;
 
-    public AbstractState(Context context){
+    public AbstractState(Context context) {
         this.context = context;
     }
 
@@ -21,7 +21,7 @@ public class AbstractState implements IState{
         nextState();
     }
 
-    protected void doHandle(){
+    protected void doHandle() {
 
     }
 

@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit;
 
 @Slf4j
 public class TimeUnitTest {
-    
+
     @Test
     public void demo1() {
         // 将1分钟转换为秒，将1小时转换为秒

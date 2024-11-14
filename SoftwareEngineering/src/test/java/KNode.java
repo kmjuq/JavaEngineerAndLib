@@ -26,7 +26,7 @@ public class KNode {
         return new KNode(null, null, value);
     }
 
-    public static KNode[] of(int... args){
+    public static KNode[] of(int... args) {
         KNode[] kNodes = new KNode[args.length];
         for (int i = 0; i < args.length; i++) {
             kNodes[i] = KNode.of(args[i]);

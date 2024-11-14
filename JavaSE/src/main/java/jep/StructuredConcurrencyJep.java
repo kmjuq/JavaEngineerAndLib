@@ -3,25 +3,28 @@ package jep;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 
-import java.util.concurrent.*;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 /**
  * 通过两个样例的执行过程可以得之，使用结构化并发，当其中一个线程有问题时，可以直接关闭相关线程。
- * {@link StructuredTaskScope}
+ * { StructuredTaskScope}
  */
 @Slf4j
 public class StructuredConcurrencyJep {
 
     @Test
     public void demo1() throws ExecutionException, InterruptedException {
-        try (var scope = new StructuredTaskScope.ShutdownOnFailure()) {
-            StructuredTaskScope.Subtask<String> user = scope.fork(this::findUser);
-            StructuredTaskScope.Subtask<Integer> order = scope.fork(this::fetchOrder);
-
-            scope.join();
-            scope.throwIfFailed();
-
-        }
+//        try (var scope = new StructuredTaskScope.ShutdownOnFailure()) {
+//            StructuredTaskScope.Subtask<String> user = scope.fork(this::findUser);
+//            StructuredTaskScope.Subtask<Integer> order = scope.fork(this::fetchOrder);
+//
+//            scope.join();
+//            scope.throwIfFailed();
+//
+//        }
 
         log.info(" TimeUnit.MILLISECONDS start");
         TimeUnit.MILLISECONDS.sleep(3000);

@@ -18,17 +18,17 @@ public class CountDownLatchTest {
     @Test
     public void demo1() throws InterruptedException {
         CountDownLatch countDownLatch = new CountDownLatch(3);
-        ThreadUtil.execAsync(ThrowingRunnable.unchecked(()->{
+        ThreadUtil.execAsync(ThrowingRunnable.unchecked(() -> {
             TimeUnit.SECONDS.sleep(1);
             log.info("加载地图资源");
             countDownLatch.countDown();
         }));
-        ThreadUtil.execAsync(ThrowingRunnable.unchecked(()->{
+        ThreadUtil.execAsync(ThrowingRunnable.unchecked(() -> {
             TimeUnit.SECONDS.sleep(2);
             log.info("加载人物资源");
             countDownLatch.countDown();
         }));
-        ThreadUtil.execAsync(ThrowingRunnable.unchecked(()->{
+        ThreadUtil.execAsync(ThrowingRunnable.unchecked(() -> {
             TimeUnit.SECONDS.sleep(3);
             log.info("加载场景资源");
             countDownLatch.countDown();

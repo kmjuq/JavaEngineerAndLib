@@ -5,7 +5,7 @@ cnblogs:
       date: 2002-12-14
       updateCount: 12
       isEnd: true
-      author: &author1 [kmj,jmk]
+      author: &author1 [ kmj,jmk ]
       royalties: 124.4
       desc: >
         i am studying yml spec
@@ -37,6 +37,6 @@ cnblogs:
     nismsp: 11010802022657
   }
   matrix:
-    - [1,2,3]
-    - [4,5,6]
-    - [7,8,9]
+    - [ 1,2,3 ]
+    - [ 4,5,6 ]
+    - [ 7,8,9 ]

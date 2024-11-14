@@ -21,7 +21,7 @@ public class ReentrantLockTest {
     public static void main(String[] args) throws InterruptedException {
         Thread ta = new Thread(() -> {
             log.info("interrupt status {}", Thread.currentThread().isInterrupted());
-            while(!Thread.currentThread().isInterrupted()){
+            while (!Thread.currentThread().isInterrupted()) {
             }
             log.info("中断了。");
         }, "A");

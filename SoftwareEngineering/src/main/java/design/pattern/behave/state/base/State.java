@@ -29,7 +29,7 @@ package design.pattern.behave.state.base;
  */
 public interface State {
 
-  void onEnterState();
+    void onEnterState();
 
-  void observe();
+    void observe();
 }

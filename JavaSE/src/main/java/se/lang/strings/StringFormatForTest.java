@@ -40,7 +40,7 @@ public class StringFormatForTest {
     }
 
     @Test
-    public void demo3(){
+    public void demo3() {
         String str = "kmj,,sdf";
         String[] split = str.split(",");
         System.out.println(Arrays.toString(split));

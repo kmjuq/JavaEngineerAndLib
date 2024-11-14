@@ -4,9 +4,6 @@ import lombok.*;
 import lombok.experimental.Accessors;
 
 
-
-
-
 /**
  * <p>
  * 用来测试对象类

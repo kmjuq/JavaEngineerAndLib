@@ -1,6 +1,6 @@
 package design.pattern.behave.visitor;
 
-public class VisitorAdaptor implements IVisitor{
+public class VisitorAdaptor implements IVisitor {
 
     @Override
     public void visit(OnePhase onePhase) {

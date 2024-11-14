@@ -1,6 +1,6 @@
 package design.pattern.behave.command;
 
-public class VolumnMinusCommand extends AbstractCommand{
+public class VolumnMinusCommand extends AbstractCommand {
 
 
     public VolumnMinusCommand(TVReceiver tvReceiver) {

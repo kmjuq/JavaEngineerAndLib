@@ -13,6 +13,6 @@ import lombok.extern.slf4j.Slf4j;
 public class LogListener implements EventListener {
     @Override
     public void listenEvent(EventSource es) {
-        log.info("事件监听");
+        es.print();
     }
 }

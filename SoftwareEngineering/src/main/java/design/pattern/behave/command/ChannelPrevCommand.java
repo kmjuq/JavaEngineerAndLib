@@ -1,6 +1,6 @@
 package design.pattern.behave.command;
 
-public class ChannelPrevCommand extends AbstractCommand{
+public class ChannelPrevCommand extends AbstractCommand {
 
 
     public ChannelPrevCommand(TVReceiver tvReceiver) {

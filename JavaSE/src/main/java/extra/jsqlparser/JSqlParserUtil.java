@@ -88,7 +88,7 @@ public class JSqlParserUtil {
 
     @Test
     public void demo2() throws JSQLParserException, ParseException {
-        SimpleNode node = (SimpleNode)CCJSqlParserUtil.parseAST(sql);
+        SimpleNode node = (SimpleNode) CCJSqlParserUtil.parseAST(sql);
         node.dump("");
     }
 

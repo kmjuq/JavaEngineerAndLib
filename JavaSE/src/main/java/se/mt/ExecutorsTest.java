@@ -12,7 +12,6 @@ public class ExecutorsTest {
     /**
      * {@link Executors#newCachedThreadPool()}
      * 特性：
-     *
      */
     @Test
     public void cache() throws ExecutionException, InterruptedException {
@@ -21,11 +20,9 @@ public class ExecutorsTest {
         System.out.println(submit.get());
     }
 
-    public void fix(){
+    public void fix() {
         Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
     }
-
-
 
 
 }

@@ -7,16 +7,16 @@ public class SealedJep {
 
 
     sealed interface IService
-            permits Service{
+            permits Service {
 
     }
 
     sealed static class AbstractService
-            permits Service{
+            permits Service {
 
     }
 
-    final class Service extends AbstractService implements IService{
+    final class Service extends AbstractService implements IService {
 
     }
 

@@ -45,15 +45,15 @@ public class JsoupTest {
     }
 
     @Test
-    public void demo2(){
+    public void demo2() {
         String content1 = "<p>不好意思，我不是很理解您的问题，请用一句话准确描述</p><p><img src=\"1\" onerror=\"alert(1)\"/></p>";
         String content2 = "------WebKitFormBoundaryvdmlt4gdBgNBSSP6\n" +
                 "Content-Disposition: form-data; name=\"unknownWord\"\n" +
                 "\n" +
                 "<p>不好意思，我不是很理解您的问题，请用一句话准确描述</p><p><img src=\"1\" onerror=\"alert(1)\"/></p>\n" +
                 "------WebKitFormBoundaryvdmlt4gdBgNBSSP6";
-        System.out.printf("content1 [%s]%n",Jsoup.clean(content1, Safelist.relaxed()));
-        System.out.printf("content2 [%s]%n",Jsoup.clean(content2, Safelist.relaxed()));
+        System.out.printf("content1 [%s]%n", Jsoup.clean(content1, Safelist.relaxed()));
+        System.out.printf("content2 [%s]%n", Jsoup.clean(content2, Safelist.relaxed()));
     }
 
 }

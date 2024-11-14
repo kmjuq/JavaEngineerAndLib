@@ -13,7 +13,7 @@
  *         System.out.println("Hello World!");      // @highlight substring="println"
  *     }
  * }
- * }
+ *}
  * See <a href="https://docs.oracle.com/en/java/javase/19/docs/api/java.base/java/lang/InterruptedException.html">InterruptedException</a>
  */
 package jep;

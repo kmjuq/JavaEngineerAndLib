@@ -21,7 +21,7 @@ public abstract class AskLeaveHandler {
     public void handlerChain(AskLeaveRequest request) {
         AskLeaveHandler current = this;
         current.handler(request);
-        while(Objects.nonNull(current.next())){
+        while (Objects.nonNull(current.next())) {
             current = current.next();
             current.handler(request);
         }

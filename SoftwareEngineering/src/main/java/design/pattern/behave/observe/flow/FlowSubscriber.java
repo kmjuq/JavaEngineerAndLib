@@ -5,7 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import java.util.concurrent.Flow;
 
 @Slf4j
-public class FlowSubscriber<T> implements Flow.Subscriber<T>{
+public class FlowSubscriber<T> implements Flow.Subscriber<T> {
 
     @Override
     public void onSubscribe(Flow.Subscription subscription) {
