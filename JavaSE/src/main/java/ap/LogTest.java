@@ -1,8 +1,7 @@
 package ap;
 
-import com.study.kmj.LogStudy;
 
-@LogStudy
+//@LogStudy
 public class LogTest {
 
 

@@ -64,22 +64,23 @@ class SpockSpecification extends Specification {
     /**
      * feature methods
      */
-    def "六个spock语义块"() {
-        given: ""
-        when: ""
-        then: ""
-        expect: ""
-        cleanup: ""
-        where: ""
+    def "五个spock语义块"() {
+        given: "初始化"
+        when: "调用测试方法"
+        then: "检验测试结果"
+        cleanup: "释放资源"
+        where: "参数化测试"
     }
 
+    /**
+     * 理论上and语义块可以用在很多地方，但是建议只用在given
+     */
     def "and语义块，对其他语义块的补充，使内容划分更加整洁"() {
         given: "准备数据"
-        and: "准备测试环境"
-        when: "调用测试方法前置一"
-        and: "调用测试方法"
-        then: "测试结果判断一"
-        and: "测试结果判断二"
+        and: "准备数据1"
+        and: "准备数据2"
+        when: "调用测试方法"
+        then: "测试结果断言"
     }
 
     def "given when then语义流程"() {
@@ -94,6 +95,9 @@ class SpockSpecification extends Specification {
         result == 3
     }
 
+    /**
+     * 适用于when和then比较简单的场景
+     */
     def "expect语义块，相当于 when + then"() {
         expect:
         Math.max(2, 3) == 3
@@ -131,7 +135,7 @@ class SpockSpecification extends Specification {
         stack.empty
     }
 
-    def "with"() {
+    def "with方法方便校验对象属性"() {
         when:
         def node = KNode.of(1)
 
