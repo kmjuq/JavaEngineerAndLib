@@ -33,7 +33,7 @@ public class Weather {
     }
 
     private void notifyObservers() {
-        for (var obs : observers) {
+        for (WeatherObserver obs : observers) {
             obs.update(currentWeather);
         }
     }

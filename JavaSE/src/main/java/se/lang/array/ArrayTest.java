@@ -1,6 +1,10 @@
 package se.lang.array;
 
+import cn.hutool.core.util.RandomUtil;
 import org.junit.jupiter.api.Test;
+import zzz.Node;
+
+import java.util.ArrayList;
 
 /**
  * <p>
@@ -25,7 +29,10 @@ public class ArrayTest {
 
     @Test
     public void demo3() {
-
+        ArrayList<Node> list = new ArrayList<>();
+        while (true) {
+            list.add(Node.of(RandomUtil.randomInt()));
+        }
     }
 
 }

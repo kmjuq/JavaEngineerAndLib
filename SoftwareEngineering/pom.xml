@@ -12,7 +12,11 @@
 
     <properties>
         <spock.objenesis.version>3.3</spock.objenesis.version>
-        <groovy.version>4.0.25</groovy.version>
+        <spock.version>2.4-groovy-5.0</spock.version>
+        <groovy.version>5.0.4</groovy.version>
+        <junit.version>6.0.3</junit.version>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
     </properties>
 
     <build>
@@ -23,7 +27,7 @@
                 visit https://github.com/groovy/GMavenPlus/wiki -->
                 <groupId>org.codehaus.gmavenplus</groupId>
                 <artifactId>gmavenplus-plugin</artifactId>
-                <version>3.0.2</version>
+                <version>4.2.1</version>
                 <executions>
                     <execution>
                         <goals>
@@ -37,7 +41,7 @@
             <!-- Only required if names of spec classes don't match default Surefire patterns (`*Test` etc.) -->
             <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.2.5</version>
+                <version>3.5.4</version>
                 <configuration>
                     <useFile>false</useFile>
                     <includes>
@@ -54,14 +58,6 @@
                     </statelessTestsetReporter>
                 </configuration>
             </plugin>
-            <!-- Only required for spock-example build -->
-            <plugin>
-                <artifactId>maven-deploy-plugin</artifactId>
-                <version>3.1.2</version>
-                <configuration>
-                    <skip>true</skip>
-                </configuration>
-            </plugin>
         </plugins>
     </build>
 
@@ -70,7 +66,14 @@
             <dependency>
                 <groupId>org.spockframework</groupId>
                 <artifactId>spock-bom</artifactId>
-                <version>2.3-groovy-4.0</version>
+                <version>${spock.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.junit</groupId>
+                <artifactId>junit-bom</artifactId>
+                <version>${junit.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -78,12 +81,6 @@
     </dependencyManagement>
 
     <dependencies>
-        <dependency>
-            <groupId>org.apache.groovy</groupId>
-            <artifactId>groovy-all</artifactId>
-            <version>${groovy.version}</version>
-            <type>pom</type>
-        </dependency>
         <!-- Mandatory dependencies for using Spock -->
         <dependency>
             <groupId>org.spockframework</groupId>
@@ -91,23 +88,29 @@
             <scope>test</scope>
         </dependency>
         <!-- Optional dependencies for using Spock -->
+        <dependency> <!-- use a specific Groovy version rather than the one specified by spock-core -->
+            <groupId>org.apache.groovy</groupId>
+            <artifactId>groovy</artifactId>
+            <version>${groovy.version}</version>
+        </dependency>
         <dependency> <!-- enables mocking of classes (in addition to interfaces) -->
             <groupId>net.bytebuddy</groupId>
             <artifactId>byte-buddy</artifactId>
-            <version>1.14.19</version>
+            <version>1.18.3</version>
             <scope>test</scope>
         </dependency>
         <dependency> <!-- enables mocking of classes without default constructor (together with ByteBuddy or CGLIB) -->
             <groupId>org.objenesis</groupId>
             <artifactId>objenesis</artifactId>
-            <version>3.4</version>
+            <version>3.5</version>
             <scope>test</scope>
         </dependency>
         <dependency> <!-- only required if Hamcrest matchers are used -->
             <groupId>org.hamcrest</groupId>
             <artifactId>hamcrest-core</artifactId>
-            <version>2.2</version>
+            <version>3.0</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
+
 </project>

@@ -303,6 +303,11 @@
             <artifactId>transmittable-thread-local</artifactId>
             <version>${transmittable-thread-local.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.github.houbb</groupId>
+            <artifactId>pinyin</artifactId>
+            <version>0.4.0</version>
+        </dependency>
     </dependencies>
 
     <build>

@@ -19,6 +19,7 @@ public class JolTest {
 
     @Test
     public void demo1() {
+        // -XX:-UseCompressedOops 关闭指针压缩，当关闭指针压缩时，引用类型占8个字节
         final Object o = new Object();
         System.out.println(ClassLayout.parseInstance(o).toPrintable());
         final Node node = Node.of(1);
